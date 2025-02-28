@@ -1,0 +1,4 @@
+#ifndef IFILEOBSERVER_H
+#define IFILEOBSERVER_H
+
+#endif // IFILEOBSERVER_H
