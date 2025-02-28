@@ -16,6 +16,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    ConsoleLogger.h \
     FileMonitoring.h \
     IFileObserver.h \
     ILogger.h

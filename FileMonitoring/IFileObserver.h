@@ -3,6 +3,7 @@
 
 #include <QString>
 
+//observer interface
 class IFileObserver {
 public:
     virtual void onFileStatusChanged(const QString &status) = 0;
