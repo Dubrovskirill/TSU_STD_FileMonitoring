@@ -3,11 +3,12 @@
 
 #include "ILogger.h"
 #include <QDebug>
-//implementation of the logging interface.
+#include <iostream>
+//implementation of the ILogger interface that outputs messages to the console
 class ConsoleLogger : public ILogger {
 public:
-    void log(const QString &message) override {
-        qDebug() << message; // logging in to the console
+    void log(const QString& message) override {
+        std::cout << message.toStdString() << std::endl;
     }
 };
 

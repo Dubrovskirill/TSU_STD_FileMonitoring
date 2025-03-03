@@ -3,7 +3,7 @@
 
 #include <QString>
 
-//logger interface
+//interface for logging messages
 class ILogger {
 public:
     virtual void log(const QString &message) = 0;
