@@ -26,32 +26,32 @@ public:
     }
 
 signals:
-    void fileChanged(const QString& filePath, bool exists, qint64 size);
+    void fileStatusChanged(const QString& message);
 
 private slots:
     void checkFile() {
         QFile file(m_filePath);
         bool exists = file.exists();
         qint64 size = exists ? file.size() : -1;
-        system("cls");
 
+        if (exists && !m_fileExists) {
+            emit fileStatusChanged(QString("The %1 file has been created. Size: %2 bytes").arg(m_filePath).arg(size));
+        } else if (!exists && m_fileExists) {
+            emit fileStatusChanged(QString("The %1 file has been deleted.").arg(m_filePath));
+        } else if (exists && size != m_lastSize) {
 
-
-        if (exists) {
-            if (size != m_lastSize) {
-                m_logger->log(QString("The file '%1' exists, the file has been modified. Size: %2 bytes").arg(m_filePath).arg(size));
-            } else if (size == 0) {
-                m_logger->log(QString("The file '%1' exists, but it is empty.").arg(m_filePath));
-            } else {
-                m_logger->log(QString("The file '%1' exists. Size: %2 bytes").arg(m_filePath).arg(size));
-            }
-        } else {
-            // Если файл не существует, выводим сообщение
-            m_logger->log(QString("The %1 file does not exist.").arg(m_filePath));
+            emit fileStatusChanged(QString("The %1 file has been changed. New size: %2 bytes").arg(m_filePath).arg(size));
         }
+
         m_lastSize = size;
         m_fileExists = exists;
     }
+
+public slots:
+    void logMessage(const QString& message) {
+        m_logger->log(message);
+    }
+
 
 private:
     QString m_filePath;
