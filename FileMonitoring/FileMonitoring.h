@@ -19,10 +19,13 @@ public:
     //accepts a file path and a pointer to the logger object. Initializes variables, creates a timer, and connects it to the slot.
     FileMonitoring(const QString& filePath, ILogger* logger)
         : m_filePath(filePath), m_logger(logger), m_lastSize(-1), m_fileExists(false) {
-        checkFile();
         m_timer = new QTimer(this);
         connect(m_timer, &QTimer::timeout, this, &FileMonitoring::checkFile);
         m_timer->start(100);
+    }
+
+    void initialize() {
+        checkFile(); // Вызываем проверку после подключения сигналов и слотов
     }
 
 signals:
