@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         FileMonitoring.cpp \
+        FileMonitoringingManager.cpp \
         main.cpp
 
 # Default rules for deployment.
