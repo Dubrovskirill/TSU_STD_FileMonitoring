@@ -14,4 +14,5 @@ void FileMonitoringManager::addFile(const QString& filePath) {
 
 void FileMonitoringManager::handleFileStatusChanged(const QString& message) {
     emit fileStatusChanged(message);
+
 }

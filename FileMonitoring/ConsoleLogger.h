@@ -9,6 +9,7 @@ class ConsoleLogger : public QObject, public ILogger {
     Q_OBJECT
 public:
     void log(const QString& message) override {
+        system("cls");
         std::cout << message.toStdString() << std::endl;
     }
 };

@@ -5,11 +5,11 @@
 #include <QList>
 #include "FileMonitoring.h"
 
-class FileMonitoringingManager : public QObject {
+class FileMonitoringManager : public QObject {
     Q_OBJECT
 
 public:
-    FileMonitoringingManager(ILogger* logger);
+    FileMonitoringManager(ILogger* logger);
 
     void addFile(const QString& filePath);
 
