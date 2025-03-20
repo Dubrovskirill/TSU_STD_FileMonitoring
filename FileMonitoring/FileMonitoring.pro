@@ -9,6 +9,7 @@ CONFIG += c++17 cmdline
 SOURCES += \
         FileMonitoring.cpp \
         FileMonitoringingManager.cpp \
+        TestFileInput.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -20,5 +21,7 @@ HEADERS += \
     ConsoleLogger.h \
     FileMonitoring.h \
     FileMonitoringManager.h \
+    IFileInput.h \
     IFileMonitoringManager.h \
-    ILogger.h
+    ILogger.h \
+    TestFileInput.h
