@@ -20,4 +20,5 @@ HEADERS += \
     ConsoleLogger.h \
     FileMonitoring.h \
     FileMonitoringManager.h \
+    IFileMonitoringManager.h \
     ILogger.h

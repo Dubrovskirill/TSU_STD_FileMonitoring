@@ -35,17 +35,11 @@ int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
     ConsoleLogger logger;
+    FileMonitoringManager fileManager(&logger);
 
+    fileManager.addFile("test1.txt");
+    fileManager.addFile("test2.txt");
 
-    QString filePath = "test1.txt";
-
-    FileMonitoring fileMonitor(filePath, &logger);
-
-
-    QObject::connect(&fileMonitor, &FileMonitoring::fileStatusChanged,
-                     [&logger](const QString &message) {
-                         logger.log(message);
-                     });
 
     return a.exec();
 }

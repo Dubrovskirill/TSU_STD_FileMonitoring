@@ -12,6 +12,7 @@ class FileMonitoring : public QObject {
 public:
     // Accepts a file path and a pointer to the logger object.
     FileMonitoring(const QString& filePath, ILogger* logger);
+    QString filePath() const { return m_filePath; }
 
 signals:
     void fileStatusChanged(const QString& message);

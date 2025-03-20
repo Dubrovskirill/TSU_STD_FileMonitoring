@@ -4,23 +4,20 @@
 #include <QObject>
 #include <QList>
 #include "FileMonitoring.h"
+#include "IFileMonitoringManager.h"
 
-class FileMonitoringManager : public QObject {
+class FileMonitoringManager : public QObject, public IFileMonitoringManager {
     Q_OBJECT
 
 public:
-    FileMonitoringManager(ILogger* logger);
+    FileMonitoringManager(ILogger* logger, QObject* parent = nullptr);
 
-    void addFile(const QString& filePath);
-
-private slots:
-    void handleFileStatusChanged(const QString& message);
-
-signals:
-    void fileStatusChanged(const QString& message);
+    void addFile(const QString& filePath) override;
+    void removeFile(const QString& filePath) override;
 
 private:
-    QList<FileMonitoring*> m_monitors;
+    QList<FileMonitoring*> m_fileMonitors;
     ILogger* m_logger;
 };
+
 #endif // FILEMONITORINGMANAGER_H
