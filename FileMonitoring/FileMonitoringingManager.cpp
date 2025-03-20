@@ -7,7 +7,7 @@ FileMonitoringManager::FileMonitoringManager(ILogger* logger)
 
 void FileMonitoringManager::addFile(const QString& filePath) {
     FileMonitoring* monitor = new FileMonitoring(filePath, m_logger);
-    connect(monitor, &FileMonitoring::fileStatusChanged, this, &FileMonitoringManager::handleFileStatusChanged);
+    //connect(monitor, &FileMonitoring::fileStatusChanged, this, &FileMonitoringManager::fileStatusChanged);
     m_monitors.append(monitor);
 }
 

@@ -1,22 +1,16 @@
 #ifndef FILEMONITORING_H
 #define FILEMONITORING_H
 
-#include <QCoreApplication>
 #include <QObject>
 #include <QFile>
 #include <QTimer>
-#include <QProcess>
-#include <iostream>
-#include <thread>
-#include <chrono>
 #include "ILogger.h"
-
 
 class FileMonitoring : public QObject {
     Q_OBJECT
 
 public:
-    //accepts a file path and a pointer to the logger object. Initializes variables, creates a timer, and connects it to the slot.
+    // Accepts a file path and a pointer to the logger object.
     FileMonitoring(const QString& filePath, ILogger* logger);
 
 signals:
@@ -24,9 +18,6 @@ signals:
 
 private slots:
     void checkFile();
-
-public slots:
-    void logMessage(const QString& message);
 
 private:
     QString m_filePath;
