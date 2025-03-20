@@ -11,11 +11,9 @@ void FileMonitoringManager::addFile(const QString& filePath) {
                      [this](const QString &message) {
                          m_logger->log(message);
                      });
-
 }
 
 void FileMonitoringManager::removeFile(const QString& filePath) {
-
     for (int i = 0; i < m_fileMonitors.size(); ++i) {
         if (m_fileMonitors[i]->filePath() == filePath) {
             delete m_fileMonitors[i];

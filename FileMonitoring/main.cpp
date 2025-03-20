@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
     ConsoleLogger logger;
-    FileMonitoringManager fileManager(&logger);
+    FileMonitoringManager& fileManager = FileMonitoringManager::getInstance(&logger);
 
     fileManager.addFile("test1.txt");
     fileManager.addFile("test2.txt");
