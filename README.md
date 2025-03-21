@@ -15,9 +15,10 @@
 Консольный интерфейс: Все уведомления выводятся в консоль.
 
 
+![ТРПО мониторинг файлов](https://github.com/user-attachments/assets/ce0c9e93-77e3-40d8-9635-4bb756ef6030)
 
 
 
 
 
-!(https://github.com/user-attachments/assets/6d16ad6f-7417-4d18-9a3e-98d5281545fc)
+
