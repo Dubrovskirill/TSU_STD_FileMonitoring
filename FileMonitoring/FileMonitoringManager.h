@@ -20,10 +20,11 @@ public:
 
 private:
     FileMonitoringManager(ILogger* logger, QObject* parent = nullptr);
+    ~FileMonitoringManager();
     FileMonitoringManager(const FileMonitoringManager&) = delete;
     FileMonitoringManager& operator=(const FileMonitoringManager&) = delete;
 
-    QList<FileMonitoring> m_fileMonitors;
+    QList<FileMonitoring*> m_fileMonitors;
     ILogger* m_logger;
 };
 
