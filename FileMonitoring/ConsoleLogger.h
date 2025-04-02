@@ -6,11 +6,11 @@
 #include <QObject>
 #include <iostream>
 //implementation of the ILogger interface that outputs messages to the console
-class ConsoleLogger : public QObject, public ILogger {
-    Q_OBJECT
+class ConsoleLogger : public ILogger {
 public:
-    void log(const QString& message) override {
-        system("cls");
+    ~ConsoleLogger() override = default;
+public slots:
+    virtual void log(const QString &message) override {
         std::cout << message.toStdString() << std::endl;
     }
 };

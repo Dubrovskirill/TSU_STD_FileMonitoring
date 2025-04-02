@@ -12,7 +12,7 @@ void TestFileInput::inputFiles() {
     QString arrayFile[n] = {"test1.txt", "test2.txt", "test3.txt", "test4.txt"};
     for (int i = 0; i < n; ++i) {
         createFile(arrayFile[i]);
-        m_files.append(arrayFile[i]); // Добавляем файл в список
+        m_files.append(arrayFile[i]);
     }
 }
 

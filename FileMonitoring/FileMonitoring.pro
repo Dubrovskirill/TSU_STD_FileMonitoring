@@ -22,6 +22,5 @@ HEADERS += \
     FileMonitoring.h \
     FileMonitoringManager.h \
     IFileInput.h \
-    IFileMonitoringManager.h \
     ILogger.h \
     TestFileInput.h
