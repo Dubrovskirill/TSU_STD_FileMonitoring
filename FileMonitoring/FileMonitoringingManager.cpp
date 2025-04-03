@@ -1,17 +1,16 @@
 #include "FileMonitoringManager.h"
 
-FileMonitoringManager::FileMonitoringManager(ILogger* logger, QObject* parent)
-    : QObject(parent), m_logger(logger) {}
+FileMonitoringManager::FileMonitoringManager(QObject* parent)
+    : QObject(parent) {}
 
 FileMonitoringManager::~FileMonitoringManager() {
     qDeleteAll(m_fileMonitors);
     m_fileMonitors.clear();
 }
 
-void FileMonitoringManager::addFile(const QString& filePath) {
-    FileMonitoring* fileMonitor = new FileMonitoring(filePath, m_logger);
+void FileMonitoringManager::addFile(const QString& filePath, ILogger* logger) {
+    FileMonitoring* fileMonitor = new FileMonitoring(filePath, logger);
     m_fileMonitors.append(fileMonitor);
-
 }
 
 void FileMonitoringManager::removeFile(const QString& filePath) {

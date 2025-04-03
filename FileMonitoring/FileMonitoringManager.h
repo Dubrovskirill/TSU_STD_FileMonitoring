@@ -10,16 +10,16 @@ class FileMonitoringManager : public QObject {
     Q_OBJECT
 
 public:
-    static FileMonitoringManager& getInstance(ILogger* logger, QObject* parent = nullptr) {
-        static FileMonitoringManager instance(logger, parent);
+    static FileMonitoringManager& getInstance(QObject* parent = nullptr) {
+        static FileMonitoringManager instance(parent);
         return instance;
     }
 
-    void addFile(const QString& filePath);
+    void addFile(const QString& filePath, ILogger* logger);
     void removeFile(const QString& filePath);
 
 private:
-    FileMonitoringManager(ILogger* logger, QObject* parent = nullptr);
+   FileMonitoringManager(QObject* parent = nullptr);
     ~FileMonitoringManager();
     FileMonitoringManager(const FileMonitoringManager&) = delete;
     FileMonitoringManager& operator=(const FileMonitoringManager&) = delete;
