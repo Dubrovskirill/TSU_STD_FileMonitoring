@@ -1,4 +1,4 @@
-![ТРПО мониторинг файлов](https://github.com/user-attachments/assets/82d7b4f1-322e-4caa-929f-876ef8c9a985)# TSU_STD_FileMonitoring
+# TSU_STD_FileMonitoring
 ТРПО. Лабораторная работа №1 - Наблюдение за файлами.
 
 ## Описание
