@@ -10,7 +10,7 @@ class ConsoleLogger : public ILogger {
 public:
     ~ConsoleLogger() override = default;
 public slots:
-    virtual void log(const QString &message) override {
+    void log(const QString &message) override {
         std::cout << message.toStdString() << std::endl;
     }
 };

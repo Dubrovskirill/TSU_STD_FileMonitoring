@@ -7,13 +7,13 @@ int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
     ConsoleLogger logger;
-    FileMonitoringManager& fileManager = FileMonitoringManager::getInstance(&logger);
+    FileMonitoringManager& fileManager = FileMonitoringManager::getInstance();
 
     TestFileInput fileInput;
     fileInput.inputFiles();
     QList<QString> files = fileInput.getFiles();
     for (const QString& file : files) {
-       fileManager.addFile(file);
+       fileManager.addFile(file, &logger);
     }
 
 
