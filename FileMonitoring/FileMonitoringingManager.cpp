@@ -8,8 +8,13 @@ FileMonitoringManager::~FileMonitoringManager() {
     m_fileMonitors.clear();
 }
 
-void FileMonitoringManager::addFile(const QString& filePath, ILogger* logger) {
-    FileMonitoring* fileMonitor = new FileMonitoring(filePath, logger);
+void FileMonitoringManager::setLogger(ILogger* logger) {
+
+    m_logger=logger;
+}
+
+void FileMonitoringManager::addFile(const QString& filePath) {
+    FileMonitoring* fileMonitor = new FileMonitoring(filePath,  m_logger);
     m_fileMonitors.append(fileMonitor);
 }
 

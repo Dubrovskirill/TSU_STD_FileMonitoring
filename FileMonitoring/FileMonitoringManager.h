@@ -14,8 +14,8 @@ public:
         static FileMonitoringManager instance(parent);
         return instance;
     }
-
-    void addFile(const QString& filePath, ILogger* logger);
+    void setLogger(ILogger* logger);
+    void addFile(const QString& filePath);
     void removeFile(const QString& filePath);
 
 private:
@@ -25,6 +25,7 @@ private:
     FileMonitoringManager& operator=(const FileMonitoringManager&) = delete;
 
     QList<FileMonitoring*> m_fileMonitors;
+    ILogger* m_logger;
 };
 
 #endif // FILEMONITORINGMANAGER_H

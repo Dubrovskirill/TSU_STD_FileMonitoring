@@ -12,8 +12,9 @@ int main(int argc, char *argv[]) {
     TestFileInput fileInput;
     fileInput.inputFiles();
     QList<QString> files = fileInput.getFiles();
+    fileManager.setLogger(&logger);
     for (const QString& file : files) {
-       fileManager.addFile(file, &logger);
+       fileManager.addFile(file);
     }
 
 
