@@ -25,7 +25,7 @@ private:
     FileMonitoringManager& operator=(const FileMonitoringManager&) = delete;
 
     QList<FileMonitoring*> m_fileMonitors;
-    ILogger* m_logger;
+    ILogger* m_logger=nullptr;
 };
 
 #endif // FILEMONITORINGMANAGER_H

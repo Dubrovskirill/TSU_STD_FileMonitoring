@@ -10,7 +10,10 @@ FileMonitoringManager::~FileMonitoringManager() {
 
 void FileMonitoringManager::setLogger(ILogger* logger) {
 
-    m_logger=logger;
+    m_logger = logger;
+    for (FileMonitoring* fileMonitor : m_fileMonitors) {
+        fileMonitor->setLogger(m_logger);
+    }
 }
 
 void FileMonitoringManager::addFile(const QString& filePath) {

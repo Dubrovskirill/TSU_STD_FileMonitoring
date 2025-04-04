@@ -13,6 +13,9 @@ public:
     // Accepts a file path and a pointer to the logger object.
     FileMonitoring(const QString& filePath, ILogger* logger);
     QString filePath() const { return m_filePath; }
+    void setLogger(ILogger* logger) {
+        m_logger = logger;
+    }
 
 signals:
     void fileStatusChanged(const QString& message);
